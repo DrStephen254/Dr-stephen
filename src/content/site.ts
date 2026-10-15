@@ -2,6 +2,8 @@
  * SITE CONFIGURATION — edit this file to update clinic details.
  * Anything set to `null` or `verified: false` is hidden or shown as an
  * "Awaiting verification" placeholder. Never fill in unverified details.
+ *
+ * Items below marked verified: true were supplied directly by Dr. Kairu.
  */
 
 export const site = {
@@ -19,10 +21,11 @@ export const site = {
     /** Digits only with country code, e.g. "2547XXXXXXXX". null disables WhatsApp buttons. */
     whatsapp: null as string | null,
     email: null as string | null,
-    address: null as string | null,
+    /** Confirmed by Dr. Kairu. */
+    address: "The Green House, Adams Arcade, First Floor, Suite No. 19, East Wing",
     hours: null as string | null,
-    /** Google Maps embed URL once the location is confirmed. */
-    mapEmbedUrl: null as string | null,
+    /** Google Maps embed for the practice building (Adams Arcade, Nairobi). */
+    mapEmbedUrl: "https://maps.google.com/maps?q=Adams%20Arcade%2C%20Nairobi&z=16&output=embed",
   },
 
   /** Analytics: leave null until a privacy-conscious provider is chosen. */
@@ -35,28 +38,47 @@ export const site = {
 
 export type Verifiable = { label: string; detail?: string; verified: boolean };
 
-/** Qualifications — set verified: true only after documents are checked. */
+/** Professional training supplied by Dr. Kairu. */
 export const qualifications: Verifiable[] = [
-  { label: "Medical degree (MBChB)", detail: "Institution and year to be confirmed", verified: false },
-  { label: "Master of Medicine (Internal Medicine)", detail: "Institution and year to be confirmed", verified: false },
-  { label: "Fellowship / training in Gastroenterology", detail: "Programme to be confirmed", verified: false },
+  { label: "MP&DB", detail: "University of Nairobi", verified: true },
+  { label: "MDS", detail: "University of the Witwatersrand, South Africa", verified: true },
+  /** Still awaiting documents — hidden until verified. */
   { label: "KMPDC registration", detail: "Registration number to be confirmed", verified: false },
 ];
 
 export const memberships: Verifiable[] = [
-  { label: "Professional society membership", detail: "To be confirmed", verified: false },
+  { label: "American Gastroenterological Association", detail: "United States", verified: true },
+  { label: "Gastroenterology Society of Kenya", detail: "Kenya", verified: true },
 ];
 
 export const hospitals: Verifiable[] = [
-  { label: "Hospital affiliation 1", detail: "Name and privileges to be confirmed", verified: false },
-  { label: "Hospital affiliation 2", detail: "Name and privileges to be confirmed", verified: false },
+  { label: "Nairobi Hospital", verified: true },
+  { label: "Aga Khan University Hospital", verified: true },
+  { label: "Mater Hospital", verified: true },
+  { label: "Menelik Medical Centre", verified: true },
+  { label: "Avenue Hospital", verified: true },
+  { label: "M. P. Shah Hospital", verified: true },
+  { label: "Gurunanak", verified: true },
 ];
 
 export const insurers: Verifiable[] = [
-  { label: "Insurer 1", verified: false },
-  { label: "Insurer 2", verified: false },
-  { label: "Insurer 3", verified: false },
-  { label: "Corporate schemes", verified: false },
+  { label: "Jubilee", verified: true },
+  { label: "First Assurance", verified: true },
+  { label: "APA", verified: true },
+  { label: "Madison Insurance", verified: true },
+  { label: "Vanbreda", verified: true },
+  { label: "Aetna", verified: true },
+  { label: "Mercantile", verified: true },
+  { label: "Real Insurance", verified: true },
+  { label: "CIC", verified: true },
+  { label: "Pioneer Insurance", verified: true },
+  { label: "Kenindia Assurance", verified: true },
+  { label: "Clarkson Nottcutt", verified: true },
+  { label: "Eagle Africa", verified: true },
+  { label: "Resolution Insurance", verified: true },
+  { label: "UAP", verified: true },
+  { label: "Kenya Defence Forces Medical Insurance Scheme", verified: true },
+  { label: "AoN Minet", verified: true },
 ];
 
 export const whatsappLink = (message: string) =>
