@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
-import suiteImg from "@/assets/procedure-suite.jpg";
+import portraitImg from "@/assets/dr-kairu-consultation.jpg";
 import { ContactButtons, Section, SectionHeading, VerifiedList, Pending, buttonStyles } from "@/components/site/ui";
 import { services } from "@/content/services";
 import { articles } from "@/content/articles";
@@ -37,7 +37,7 @@ function Home() {
 
       <Section>
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <img src={suiteImg} alt="Endoscopy procedure suite" width={1408} height={1008} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-soft" />
+          <img src={portraitImg} alt="Dr. Stephen Mbugua Kairu at his desk in consultation" width={1448} height={1086} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-soft" />
           <div>
             <p className="eyebrow mb-3">Meet your doctor</p>
             <h2 className="text-3xl font-medium md:text-4xl">{site.name}</h2>
