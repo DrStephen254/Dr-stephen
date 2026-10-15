@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { site } from "@/content/site";
+import { landlineLink, site, telLink } from "@/content/site";
 import { services } from "@/content/services";
 import { Pending } from "./ui";
 
@@ -36,7 +36,8 @@ export function Footer() {
         <div>
           <p className="eyebrow mb-4">Contact</p>
           <ul className="space-y-2 text-sm opacity-85">
-            <li>{site.contact.phone ?? <Pending>Phone pending</Pending>}</li>
+            <li>{site.contact.mobile ? <a href={telLink() ?? undefined} className="hover:underline">Mobile {site.contact.mobile}</a> : <Pending>Mobile pending</Pending>}</li>
+            <li>{site.contact.landline ? <a href={landlineLink() ?? undefined} className="hover:underline">Tel {site.contact.landline}</a> : <Pending>Tel pending</Pending>}</li>
             <li>{site.contact.email ?? <Pending>Email pending</Pending>}</li>
             <li>{site.contact.address ?? <Pending>Address pending</Pending>}</li>
             <li className="pt-2"><Link to="/contact" className="hover:underline">Contact & Appointments</Link></li>

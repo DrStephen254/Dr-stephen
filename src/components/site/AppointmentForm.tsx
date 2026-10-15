@@ -42,7 +42,7 @@ export function AppointmentForm() {
           <p className="mt-3 text-muted-foreground">We've opened WhatsApp with your request. Please press send so the clinic receives it. Your appointment is confirmed only when the clinic replies.</p>
         ) : (
           <p className="mt-3 text-muted-foreground">
-            Online requests are not yet connected to the clinic, so nothing has been sent. {tel ? <>Please call <a className="underline" href={tel}>{site.contact.phone}</a> to book.</> : "Clinic contact lines will be published here shortly."}
+            Online requests are not yet connected to the clinic, so nothing has been sent. {tel ? <>Please call <a className="underline" href={tel}>{site.contact.mobile ?? site.contact.landline}</a> to book.</> : "Clinic contact lines will be published here shortly."}
           </p>
         )}
         <button className={buttonStyles({ variant: "outline" }) + " mt-6"} onClick={() => setDone(null)}>Start a new request</button>

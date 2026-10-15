@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Clock } from "lucide-react";
-import { PageHero, Section, VerifiedList, ContactButtons, Pending } from "@/components/site/ui";
+import { PageHero, Section, VerifiedList, ContactButtons, Pending, HoursList } from "@/components/site/ui";
 import { hospitals, site } from "@/content/site";
 import { seo } from "@/lib/seo";
 
@@ -18,7 +18,13 @@ function Hospitals() {
           <div className="space-y-4 rounded-2xl border bg-card p-7">
             <h2 className="text-2xl font-medium">Practice</h2>
             <p className="flex gap-2"><MapPin className="h-5 w-5 shrink-0 text-primary" /> {site.contact.address ?? <Pending>Address pending</Pending>}</p>
-            <p className="flex gap-2"><Clock className="h-5 w-5 shrink-0 text-primary" /> {site.contact.hours ?? <Pending>Hours pending</Pending>}</p>
+            <div className="flex gap-2">
+              <Clock className="h-5 w-5 shrink-0 text-primary" />
+              <div className="w-full">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Operating hours</p>
+                <HoursList className="mt-2" />
+              </div>
+            </div>
           </div>
           {site.contact.mapEmbedUrl ? (
             <iframe title="Map to the clinic" src={site.contact.mapEmbedUrl} loading="lazy" className="aspect-video w-full rounded-2xl border" />

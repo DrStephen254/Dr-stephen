@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
 import portraitImg from "@/assets/dr-kairu-consultation.jpg";
-import { ContactButtons, Section, SectionHeading, VerifiedList, Pending, buttonStyles } from "@/components/site/ui";
+import { ContactButtons, Section, SectionHeading, VerifiedList, Pending, buttonStyles, HoursList } from "@/components/site/ui";
 import { services } from "@/content/services";
 import { articles } from "@/content/articles";
 import { faqs } from "@/content/faqs";
@@ -89,7 +89,8 @@ function Home() {
             <SectionHeading eyebrow="Location" title="Practice location" />
             <div className="rounded-2xl border bg-card p-6">
               <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {site.contact.address ?? <Pending>Address pending</Pending>}</p>
-              <p className="mt-3 text-sm text-muted-foreground">Hours: {site.contact.hours ?? <Pending>Hours pending</Pending>}</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Operating hours</p>
+              <HoursList className="mt-2" />
             </div>
             <Link to="/hospitals" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">Hospitals & location <ArrowRight className="h-4 w-4" /></Link>
           </div>

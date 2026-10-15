@@ -32,7 +32,7 @@ export function physicianJsonLd() {
     areaServed: { "@type": "City", name: site.city },
   };
   if (site.url) data["url"] = site.url;
-  if (site.contact.phone) data["telephone"] = site.contact.phone;
+  if (site.contact.mobile) data["telephone"] = site.contact.mobile;
   if (site.contact.address)
     data["address"] = { "@type": "PostalAddress", streetAddress: site.contact.address, addressLocality: site.city, addressCountry: "KE" };
   return JSON.stringify(data);

@@ -3,7 +3,7 @@
  * Anything set to `null` or `verified: false` is hidden or shown as an
  * "Awaiting verification" placeholder. Never fill in unverified details.
  *
- * Items below marked verified: true were supplied directly by Dr. Kairu.
+ * Items marked verified: true were supplied directly by Dr. Kairu.
  */
 
 export const site = {
@@ -16,14 +16,15 @@ export const site = {
   country: "Kenya",
 
   contact: {
-    /** International format, e.g. "+254 7XX XXX XXX". null = not yet verified. */
-    phone: null as string | null,
-    /** Digits only with country code, e.g. "2547XXXXXXXX". null disables WhatsApp buttons. */
+    /** Confirmed by Dr. Kairu: 0736 443383. */
+    mobile: "+254 736 443 383" as string | null,
+    /** Confirmed by Dr. Kairu: 020 2420950. */
+    landline: "+254 20 242 0950" as string | null,
+    /** Digits only with country code, e.g. "2547XXXXXXXX". null disables WhatsApp buttons. Awaiting Dr. Kairu's confirmation that this line is on WhatsApp. */
     whatsapp: null as string | null,
     email: null as string | null,
     /** Confirmed by Dr. Kairu. */
     address: "The Green House, Adams Arcade, First Floor, Suite No. 19, East Wing",
-    hours: null as string | null,
     /** Google Maps embed for the practice building (Adams Arcade, Nairobi). */
     mapEmbedUrl: "https://maps.google.com/maps?q=Adams%20Arcade%2C%20Nairobi&z=16&output=embed",
   },
@@ -37,6 +38,14 @@ export const site = {
 };
 
 export type Verifiable = { label: string; detail?: string; verified: boolean };
+
+/** Operating hours confirmed by Dr. Kairu. */
+export const operatingHours: { day: string; time: string }[] = [
+  { day: "Monday – Friday", time: "8.00am – 5.00pm" },
+  { day: "Saturday", time: "Closed" },
+  { day: "Sunday", time: "Closed" },
+  { day: "Public holidays", time: "Closed" },
+];
 
 /** Professional training supplied by Dr. Kairu. */
 export const qualifications: Verifiable[] = [
@@ -86,5 +95,10 @@ export const whatsappLink = (message: string) =>
     ? `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`
     : null;
 
-export const telLink = () =>
-  site.contact.phone ? `tel:${site.contact.phone.replace(/\s/g, "")}` : null;
+const dial = (n: string | null) => (n ? `tel:${n.replace(/[\s()]/g, "")}` : null);
+
+/** Primary line to call: the mobile, falling back to the landline. */
+export const telLink = () => dial(site.contact.mobile ?? site.contact.landline);
+
+/** The landline as a separate link. */
+export const landlineLink = () => dial(site.contact.landline);
