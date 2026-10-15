@@ -19,6 +19,7 @@ import { Route as InsuranceRouteImport } from './routes/insurance'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProceduresRouteImport } from './routes/procedures'
 import { Route as ReferringDoctorsRouteImport } from './routes/referring-doctors'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -75,6 +76,11 @@ const ReferringDoctorsRoute = ReferringDoctorsRouteImport.update({
   path: '/referring-doctors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/procedures': typeof ProceduresRoute
   '/referring-doctors': typeof ReferringDoctorsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/procedures': typeof ProceduresRoute
   '/referring-doctors': typeof ReferringDoctorsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/procedures': typeof ProceduresRoute
   '/referring-doctors': typeof ReferringDoctorsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/procedures'
     | '/referring-doctors'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/$slug'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/procedures'
     | '/referring-doctors'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/$slug'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/procedures'
     | '/referring-doctors'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/$slug'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ProceduresRoute: typeof ProceduresRoute
   ReferringDoctorsRoute: typeof ReferringDoctorsRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -297,6 +310,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferringDoctorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ProceduresRoute: ProceduresRoute,
   ReferringDoctorsRoute: ReferringDoctorsRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,

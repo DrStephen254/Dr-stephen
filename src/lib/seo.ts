@@ -31,9 +31,9 @@ export function physicianJsonLd() {
     description: `${site.title} in ${site.city}, ${site.country}.`,
     areaServed: { "@type": "City", name: site.city },
   };
-  if (site.url) data.url = site.url;
-  if (site.contact.phone) data.telephone = site.contact.phone;
+  if (site.url) data["url"] = site.url;
+  if (site.contact.phone) data["telephone"] = site.contact.phone;
   if (site.contact.address)
-    data.address = { "@type": "PostalAddress", streetAddress: site.contact.address, addressLocality: site.city, addressCountry: "KE" };
+    data["address"] = { "@type": "PostalAddress", streetAddress: site.contact.address, addressLocality: site.city, addressCountry: "KE" };
   return JSON.stringify(data);
 }
