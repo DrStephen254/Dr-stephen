@@ -3,7 +3,7 @@ import { MessageCircle, Phone, ShieldAlert } from "lucide-react";
 import type { ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import { telLink, whatsappLink, type Verifiable } from "@/content/site";
+import { landlineLink, operatingHours, telLink, whatsappLink, type Verifiable } from "@/content/site";
 
 export const buttonStyles = cva(
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50",
@@ -88,6 +88,20 @@ export function VerifiedList({ items, emptyNote }: { items: Verifiable[]; emptyN
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Confirmed operating hours, shown as a day/time table. */
+export function HoursList({ className }: { className?: string }) {
+  return (
+    <dl className={cn("space-y-2", className)}>
+      {operatingHours.map((h) => (
+        <div key={h.day} className="flex items-baseline justify-between gap-4 border-b border-dashed border-border/70 pb-2 last:border-0 last:pb-0">
+          <dt className="text-sm text-muted-foreground">{h.day}</dt>
+          <dd className={cn("text-sm font-semibold", h.time === "Closed" && "font-normal text-muted-foreground")}>{h.time}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 
