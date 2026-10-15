@@ -94,6 +94,11 @@
   input, select, textarea { accent-color: var(--primary); }
   input::placeholder, textarea::placeholder { color: var(--muted-foreground); opacity: 1; }
   summary:hover { color: var(--primary-hover); }
+  /* Small orange labels need brown ink on pink/grey surfaces for AA contrast. */
+  .bg-ivory .eyebrow, .bg-ivory > .container-page > a.text-primary,
+  .bg-ivory > .container-page > div > div > a.text-primary,
+  .bg-muted .text-primary { color: var(--secondary-brown); }
+  .bg-ivory a.text-primary:hover { color: var(--primary-hover); }
   /* Light accents remain legible on the existing dark hero and footer. */
   .bg-primary-deep { --color-gold: var(--light-pink); }
 }

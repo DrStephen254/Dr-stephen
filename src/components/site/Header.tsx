@@ -25,7 +25,7 @@ export function Header() {
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="text-sm text-foreground/75 hover:text-primary" activeProps={{ className: "text-primary font-semibold" }}>
+            <Link key={n.to} to={n.to} className="text-sm text-foreground/75 hover:text-primary-hover" activeProps={{ className: "text-primary font-semibold" }}>
               {n.label}
             </Link>
           ))}
