@@ -10,10 +10,10 @@ export const buttonStyles = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground hover:bg-primary-deep shadow-soft",
-        outline: "border border-primary/30 text-primary hover:bg-secondary",
-        light: "bg-primary-foreground text-primary-deep hover:bg-ivory",
-        ghostLight: "border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10",
+        primary: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-soft",
+        outline: "border border-primary/30 text-primary hover:bg-primary-hover hover:text-primary-foreground hover:border-primary-hover",
+        light: "bg-primary-foreground text-primary-deep hover:bg-primary-hover hover:text-primary-foreground",
+        ghostLight: "border border-primary-foreground/40 text-primary-foreground hover:bg-primary-hover hover:border-primary-hover",
       },
     },
     defaultVariants: { variant: "primary" },
