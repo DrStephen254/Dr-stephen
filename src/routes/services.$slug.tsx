@@ -37,9 +37,9 @@ function ServicePage() {
           <aside className="space-y-3">
             <p className="eyebrow">Related</p>
             {others.map((o) => (
-              <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }} className="block rounded-xl border bg-card p-4 text-sm font-medium hover:bg-secondary">{o.name}</Link>
+              <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }} className="block rounded-xl border bg-card p-4 text-sm font-medium hover:bg-primary-hover hover:text-primary-foreground">{o.name}</Link>
             ))}
-            <Link to="/procedures" className="block rounded-xl border bg-card p-4 text-sm font-medium hover:bg-secondary">Procedures & Preparation</Link>
+            <Link to="/procedures" className="block rounded-xl border bg-card p-4 text-sm font-medium hover:bg-primary-hover hover:text-primary-foreground">Procedures & Preparation</Link>
           </aside>
         </div>
       </Section>
