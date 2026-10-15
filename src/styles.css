@@ -88,7 +88,7 @@
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
   a:hover { text-decoration-color: var(--primary-hover); }
-  a.text-primary:hover, nav a:not([class*="bg-primary"]):hover { color: var(--primary-hover); }
+  a.text-primary:not([class*="hover:bg-primary-hover"]):hover, nav a:not([class*="bg-primary"]):hover { color: var(--primary-hover); }
   a.group:hover .text-primary { color: var(--primary-hover); }
   a[class*="bg-card"]:hover { border-color: var(--primary-hover); }
   input, select, textarea { accent-color: var(--primary); }
@@ -98,7 +98,7 @@
   .bg-ivory .eyebrow, .bg-ivory > .container-page > a.text-primary,
   .bg-ivory > .container-page > div > div > a.text-primary,
   .bg-muted .text-primary { color: var(--secondary-brown); }
-  .bg-ivory a.text-primary:hover { color: var(--primary-hover); }
+  .bg-ivory a.text-primary:not([class*="hover:bg-primary-hover"]):hover { color: var(--primary-hover); }
   /* Light accents remain legible on the existing dark hero and footer. */
   .bg-primary-deep { --color-gold: var(--light-pink); }
 }
