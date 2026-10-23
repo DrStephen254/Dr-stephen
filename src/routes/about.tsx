@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <PageHero eyebrow="About" title={site.name} intro={`${site.title}, ${site.city}`} />
+      <PageHero eyebrow="Meet Dr. Stephen" title={site.doctorName} intro={`Consultant Physician & Gastroenterologist, ${site.name}`} />
       <Section>
         <div className="grid gap-12 md:grid-cols-[1fr_1.2fr]">
           <img src={portraitImg} alt="Dr. Stephen Mbugua Kairu in consultation at his desk" width={1448} height={1086} loading="lazy" className="aspect-[4/3] w-full rounded-2xl border object-cover" />
