@@ -40,7 +40,7 @@ function Home() {
           <img src={portraitImg} alt="Dr. Stephen Mbugua Kairu at his desk in consultation" width={1448} height={1086} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-soft" />
           <div>
             <p className="eyebrow mb-3">Meet your doctor</p>
-            <h2 className="text-3xl font-medium md:text-4xl">{site.name}</h2>
+            <h2 className="text-3xl font-medium md:text-4xl">{site.doctorName}</h2>
             <p className="mt-2 text-muted-foreground">{site.title}</p>
             <span className="gold-rule my-6" />
             <p className="leading-relaxed text-foreground/85">

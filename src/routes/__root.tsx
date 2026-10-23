@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${site.name} — Gastroenterologist, Nairobi` },
+      { title: `${site.name} — Gastroenterology & Endoscopy, Nairobi` },
       { name: "description", content: `${site.title} in ${site.city}, ${site.country}.` },
       { name: "theme-color", content: "#D7401D" },
       ...(site.googleSiteVerification ? [{ name: "google-site-verification", content: site.googleSiteVerification }] : []),
