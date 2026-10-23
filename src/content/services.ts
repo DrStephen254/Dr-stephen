@@ -10,6 +10,19 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "ibs",
+    name: "Irritable Bowel Syndrome (IBS)",
+    kind: "Condition",
+    summary: "A structured approach to recurring abdominal pain, bloating and changes in bowel habit.",
+    metaDescription: "IBS assessment in Nairobi: understanding symptoms, ruling out other causes and building a management plan.",
+    sections: [
+      { heading: "What is IBS?", body: ["IBS is a common disorder of gut–brain interaction causing abdominal pain with altered bowel habit — diarrhoea, constipation or both — often with bloating."] },
+      { heading: "Assessment", body: ["Diagnosis involves a careful history, examination and selected tests to exclude other conditions, particularly when warning features are present."] },
+      { heading: "Warning features", body: ["Rectal bleeding, weight loss, night-time symptoms, anaemia, a family history of bowel cancer or IBD, or new symptoms later in life should be assessed promptly."] },
+      { heading: "Management", body: ["Approaches may include dietary guidance, medication and attention to stress and sleep. Plans are individual."] },
+    ],
+  },
+  {
     slug: "colonoscopy",
     name: "Colonoscopy",
     kind: "Procedure",
