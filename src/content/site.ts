@@ -9,9 +9,10 @@
 export const site = {
   /** Confirmed production domain, e.g. "https://www.drkairu.co.ke" (no trailing slash). Leave "" until confirmed — canonical tags & sitemap URLs depend on it. */
   url: "",
-  name: "Dr. Stephen Mbugua Kairu",
-  shortName: "Dr. Kairu",
-  title: "Consultant Physician & Gastroenterologist",
+  name: "Digestive Health & Endoscopy Centre",
+  doctorName: "Dr. Stephen Mbugua Kairu",
+  shortName: "DH&E Centre",
+  title: "Gastroenterology & Endoscopy, Nairobi",
   city: "Nairobi",
   country: "Kenya",
 

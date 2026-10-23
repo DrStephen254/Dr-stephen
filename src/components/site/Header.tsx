@@ -5,13 +5,12 @@ import { site } from "@/content/site";
 import { buttonStyles } from "./ui";
 
 const nav = [
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/procedures", label: "Procedures" },
-  { to: "/insurance", label: "Insurance" },
-  { to: "/hospitals", label: "Location" },
-  { to: "/blog", label: "Health Library" },
-  { to: "/faqs", label: "FAQs" },
+  { to: "/", label: "Home" },
+  { to: "/services", label: "Our Services" },
+  { to: "/hospitals", label: "About the Centre" },
+  { to: "/about", label: "Meet Dr. Stephen" },
+  { to: "/blog", label: "Health Resources" },
+  { to: "/contact", label: "Contact Us" },
 ] as const;
 
 export function Header() {
@@ -25,11 +24,11 @@ export function Header() {
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="text-sm text-foreground/75 hover:text-primary-hover" activeProps={{ className: "text-primary font-semibold" }}>
+            <Link key={n.to} to={n.to} className="text-sm text-foreground/75 hover:text-primary-hover" activeOptions={{ exact: n.to === "/" }} activeProps={{ className: "text-primary font-semibold" }}>
               {n.label}
             </Link>
           ))}
-          <Link to="/contact" className={buttonStyles({ variant: "primary" }) + " px-5 py-2.5"}>Book</Link>
+          <Link to="/contact" className={buttonStyles({ variant: "primary" }) + " px-5 py-2.5"}>Book an Appointment</Link>
         </nav>
         <button className="shrink-0 rounded-full p-2 lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -41,7 +40,7 @@ export function Header() {
             {nav.map((n) => (
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="border-b py-3 text-base">{n.label}</Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className={buttonStyles({ variant: "primary" }) + " mt-4"}>Request an Appointment</Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className={buttonStyles({ variant: "primary" }) + " mt-4"}>Book an Appointment</Link>
           </div>
         </nav>
       )}
