@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import suiteImg from "@/assets/procedure-suite.jpg";
-import portraitImg from "@/assets/dr-kairu-consultation.jpg";
+const suiteImg = "/images/procedure-suite.jpg";
+const portraitImg = "/images/dr-kairu-consultation.jpg";
 import { PageHero, Section, SectionHeading, VerifiedList, ContactButtons, Pending } from "@/components/site/ui";
 import { hospitals, memberships, qualifications, site } from "@/content/site";
 import { seo } from "@/lib/seo";
