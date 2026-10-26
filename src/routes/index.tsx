@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Stethoscope, BookOpen, MonitorSmartphone, Microscope } from "lucide-react";
-import heroImg from "@/assets/hero-clinic.jpg";
-import portraitImg from "@/assets/dr-kairu-consultation.jpg";
+const heroImg = "/images/hero-clinic.jpg";
+const portraitImg = "/images/dr-kairu-consultation.jpg";
 import { ContactButtons, Section, SectionHeading, VerifiedList, Pending, buttonStyles, HoursList } from "@/components/site/ui";
 import { services } from "@/content/services";
 import { articles } from "@/content/articles";
