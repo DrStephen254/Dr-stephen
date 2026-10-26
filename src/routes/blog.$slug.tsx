@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { PageHero, Section, Prose, Pending, ContactButtons } from "@/components/site/ui";
+import { PageHero, Section, Prose, ContactButtons } from "@/components/site/ui";
 import { getArticle } from "@/content/articles";
 import { seo } from "@/lib/seo";
 
@@ -23,9 +23,7 @@ function ArticlePage() {
       <PageHero eyebrow={`${article.category} · ${article.readMinutes} min read`} title={article.title} intro={article.excerpt}>
         {article.clinicallyReviewed ? (
           <p className="text-sm text-muted-foreground">Clinically reviewed{article.reviewedOn ? ` on ${article.reviewedOn}` : ""}</p>
-        ) : (
-          <Pending>Draft — pending clinical review before publication</Pending>
-        )}
+        ) : null}
       </PageHero>
       <Section>
         <Prose>

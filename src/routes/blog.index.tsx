@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, Section, Pending } from "@/components/site/ui";
+import { PageHero, Section } from "@/components/site/ui";
 import { articles } from "@/content/articles";
 import { seo } from "@/lib/seo";
 
@@ -19,7 +19,6 @@ function Blog() {
               <p className="text-xs font-semibold uppercase tracking-wider text-gold">{a.category} · {a.readMinutes} min read</p>
               <h2 className="mt-2 text-xl font-medium">{a.title}</h2>
               <p className="mt-3 flex-1 text-sm text-muted-foreground">{a.excerpt}</p>
-              {!a.clinicallyReviewed && <div className="mt-4"><Pending>Pending clinical review</Pending></div>}
             </Link>
           ))}
         </div>
