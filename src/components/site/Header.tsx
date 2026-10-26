@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/content/site";
+import logoAsset from "@/assets/dhe-logo.png.asset.json";
 import { buttonStyles } from "./ui";
 
 const nav = [
@@ -18,9 +19,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="container-page flex h-18 items-center justify-between gap-4 py-3">
-        <Link to="/" className="min-w-0" onClick={() => setOpen(false)}>
-          <span className="block truncate font-display text-lg font-medium leading-tight text-primary-deep">{site.name}</span>
-          <span className="block truncate text-xs text-muted-foreground">{site.title}</span>
+        <Link to="/" className="min-w-0 shrink-0" onClick={() => setOpen(false)} aria-label={`${site.name} — home`}>
+          <img src={logoAsset.url} alt={site.name} className="h-11 w-auto md:h-13" />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">
           {nav.map((n) => (

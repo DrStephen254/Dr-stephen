@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { landlineLink, site, telLink } from "@/content/site";
 import { services } from "@/content/services";
+import logoAsset from "@/assets/dhe-logo.png.asset.json";
 import { Pending } from "./ui";
 
 export function Footer() {
@@ -8,8 +9,10 @@ export function Footer() {
     <footer className="bg-primary-deep text-primary-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-1">
-          <p className="font-display text-xl">{site.name}</p>
-          <p className="mt-1 text-sm opacity-70">{site.title}, {site.city}</p>
+          <Link to="/" aria-label={`${site.name} — home`} className="inline-block rounded-lg bg-white p-2">
+            <img src={logoAsset.url} alt={site.name} className="h-12 w-auto" />
+          </Link>
+          <p className="mt-3 text-sm opacity-70">{site.title}, {site.city}</p>
           <span className="gold-rule mt-5" />
         </div>
         <div>
