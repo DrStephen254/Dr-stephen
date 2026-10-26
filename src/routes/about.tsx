@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 const suiteImg = "/images/procedure-suite.jpg";
 const portraitImg = "/images/dr-kairu-consultation.jpg";
-import { PageHero, Section, SectionHeading, VerifiedList, ContactButtons, Pending } from "@/components/site/ui";
+import { PageHero, Section, SectionHeading, VerifiedList, ContactButtons } from "@/components/site/ui";
 import { hospitals, memberships, qualifications, site } from "@/content/site";
 import { seo } from "@/lib/seo";
 
@@ -21,7 +21,6 @@ function About() {
             <h2 className="text-3xl font-medium text-foreground">An approach built on clarity</h2>
             <p>Dr. Kairu cares for adults with conditions affecting the oesophagus, stomach, intestines and liver. He combines internal medicine training with specialist gastroenterology to look at the whole person, not just one symptom.</p>
             <p>Consultations aim to explain what is happening, why a test is or isn't needed, and what the options are — so that patients can make informed decisions about their care.</p>
-            <p className="text-sm text-muted-foreground"><Pending>Biography pending review</Pending> Training history and career details will be added after confirmation by Dr. Kairu.</p>
           </div>
         </div>
       </Section>

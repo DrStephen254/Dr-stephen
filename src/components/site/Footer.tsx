@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { landlineLink, site, telLink } from "@/content/site";
 import { services } from "@/content/services";
-import { Pending } from "./ui";
 
 export function Footer() {
   return (
@@ -38,10 +37,10 @@ export function Footer() {
         <div>
           <p className="eyebrow mb-4">Contact</p>
           <ul className="space-y-2 text-sm opacity-85">
-            <li>{site.contact.mobile ? <a href={telLink() ?? undefined} className="hover:underline">Mobile {site.contact.mobile}</a> : <Pending>Mobile pending</Pending>}</li>
-            <li>{site.contact.landline ? <a href={landlineLink() ?? undefined} className="hover:underline">Tel {site.contact.landline}</a> : <Pending>Tel pending</Pending>}</li>
-            <li>{site.contact.email ?? <Pending>Email pending</Pending>}</li>
-            <li>{site.contact.address ?? <Pending>Address pending</Pending>}</li>
+            <li><a href={telLink() ?? undefined} className="hover:underline">Mobile {site.contact.mobile}</a></li>
+            <li><a href={landlineLink() ?? undefined} className="hover:underline">Tel {site.contact.landline}</a></li>
+            {site.contact.email ? <li><a href={`mailto:${site.contact.email}`} className="hover:underline">{site.contact.email}</a></li> : null}
+            <li>{site.contact.address}</li>
             <li className="pt-2"><Link to="/contact" className="hover:underline">Contact & Appointments</Link></li>
           </ul>
         </div>
