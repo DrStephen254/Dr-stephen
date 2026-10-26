@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Stethoscope, BookOpen, MonitorSmartphone, Microscope } from "lucide-react";
 const heroImg = "/images/hero-clinic.jpg";
 const portraitImg = "/images/dr-kairu-consultation.jpg";
-import { ContactButtons, Section, SectionHeading, VerifiedList, Pending, buttonStyles, HoursList } from "@/components/site/ui";
+import { ContactButtons, Section, SectionHeading, VerifiedList, buttonStyles, HoursList } from "@/components/site/ui";
 import { services } from "@/content/services";
 import { articles } from "@/content/articles";
 import { faqs } from "@/content/faqs";
@@ -122,12 +122,6 @@ function Home() {
         </div>
       </Section>
 
-      <Section>
-        <SectionHeading eyebrow="Patient stories" title="What our patients say" />
-        <div className="rounded-2xl border border-dashed bg-card p-8 text-muted-foreground">
-          <Pending>Patient testimonials will appear here once patients have given written consent to publish.</Pending>
-        </div>
-      </Section>
 
       <Section tone="ivory">
         <SectionHeading eyebrow="Health Resources" title="Learn about your digestive health" />
@@ -159,7 +153,7 @@ function Home() {
           <div>
             <SectionHeading eyebrow="Contact Us" title="Visit the centre" />
             <div className="rounded-2xl border bg-card p-6">
-              <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {site.contact.address ?? <Pending>Address pending</Pending>}</p>
+              <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {site.contact.address}</p>
               <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Operating hours</p>
               <HoursList className="mt-2" />
               <div className="mt-6"><ContactButtons /></div>
