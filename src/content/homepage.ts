@@ -5,7 +5,7 @@ export const ibsHomepage = {
     paragraphs: [
       "Recurring abdominal pain, bloating, excessive gas and unpredictable bowel movements can affect more than just your stomach. They can disrupt your daily routine, affect your confidence and make even ordinary activities uncomfortable.",
       "If you regularly experience these symptoms, it may be time to understand what is happening in your digestive system.",
-      "One possible explanation is Irrritable Bowel Syndrome (IBS), a common digestive disorder that affects how the bowel functions.",
+      "One possible explanation is Irritable Bowel Syndrome (IBS), a common digestive disorder that affects how the bowel functions.",
       "At Digestive Health & Endoscopy Centre, we have a special interest in helping patients understand, diagnose and manage IBS through professional gastroenterological assessment and personalised care.",
     ],
   },
