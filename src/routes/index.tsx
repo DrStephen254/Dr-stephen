@@ -1,20 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MapPin, Stethoscope, BookOpen, MonitorSmartphone, Microscope } from "lucide-react";
+import { ArrowRight, MapPin, Stethoscope, BookOpen, MonitorSmartphone, Microscope, Phone } from "lucide-react";
 const heroImg = "/images/hero-clinic.jpg";
 const portraitImg = "/images/dr-kairu-consultation.jpg";
 import { ContactButtons, Section, SectionHeading, VerifiedList, buttonStyles, HoursList } from "@/components/site/ui";
 import { services } from "@/content/services";
 import { articles } from "@/content/articles";
 import { faqs } from "@/content/faqs";
-import { hospitals, insurers, qualifications, memberships, site } from "@/content/site";
+import { hospitals, insurers, qualifications, memberships, site, telLink } from "@/content/site";
+import { ibsHomepage } from "@/content/homepage";
+import { IBSStorySections, DigestiveCareJourney } from "@/components/site/IBSSections";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () =>
     seo({
-      title: "Gastroenterology & Endoscopy Clinic in Nairobi",
+      title: "IBS Care & Gastroenterology Clinic in Nairobi",
       description:
-        "Digestive Health & Endoscopy Centre, Adams Arcade, Nairobi — specialist care for IBS, acid reflux, ulcers, haemorrhoids, liver and pancreatic disease, with endoscopy and colonoscopy.",
+        "IBS assessment and personalised management with gastroenterologist Dr. Stephen Mbugua Kairu in Nairobi. Digestive health consultations, endoscopy and colonoscopy at Adams Arcade.",
       path: "/",
     }),
   component: Home,
@@ -46,6 +48,8 @@ function Home() {
         </div>
       </section>
 
+      <IBSStorySections />
+
       <Section>
         <div className="grid gap-12 md:grid-cols-2">
           <div>
@@ -62,7 +66,7 @@ function Home() {
             {approach.map((a) => (
               <div key={a.title} className="rounded-2xl border bg-card p-6">
                 <a.icon className="h-6 w-6 text-primary" aria-hidden />
-                <h3 className="mt-3 text-lg font-medium">{a.title}</h3>
+                <h3 className="mt-3 break-words text-lg font-medium">{a.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
               </div>
             ))}
@@ -93,20 +97,20 @@ function Home() {
           <img src={portraitImg} alt="Dr. Stephen Mbugua Kairu in consultation at Digestive Health & Endoscopy Centre" width={1448} height={1086} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-soft" />
           <div>
             <p className="eyebrow mb-3">Meet Dr. Stephen</p>
-            <h2 className="text-3xl font-medium md:text-4xl">{site.doctorName}</h2>
+            <h2 className="text-3xl font-medium md:text-4xl">{ibsHomepage.doctor.title}</h2>
             <p className="mt-2 text-muted-foreground">Consultant Physician & Gastroenterologist</p>
             <span className="gold-rule my-6" />
-            <p className="leading-relaxed text-foreground/85">
-              Dr. Stephen leads clinical care at the centre, caring for adults with digestive and liver conditions. Consultations focus on listening carefully, explaining findings clearly and agreeing a plan together.
-            </p>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {ibsHomepage.doctor.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 leading-relaxed text-foreground/85">{paragraph}</p>)}
+            <div className="mt-6 grid gap-6 [&_li]:min-w-0 [&_li]:break-words">
               <VerifiedList items={qualifications} emptyNote="Qualifications pending verification." />
               <VerifiedList items={memberships} emptyNote="Memberships pending verification." />
             </div>
-            <Link to="/about" className={buttonStyles({ variant: "outline" }) + " mt-7"}>Full profile <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/about" className={buttonStyles({ variant: "outline" }) + " mt-7"}>{ibsHomepage.doctor.cta} <ArrowRight className="h-4 w-4" aria-hidden /></Link>
           </div>
         </div>
       </Section>
+
+      <DigestiveCareJourney />
 
       <Section tone="ivory">
         <div className="grid gap-12 md:grid-cols-2">
@@ -163,12 +167,15 @@ function Home() {
       </Section>
 
       <Section tone="deep">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div>
-            <h2 className="text-3xl font-medium md:text-4xl">Take the first step to better digestive health</h2>
-            <p className="mt-3 opacity-80">Book an appointment and the centre will get back to you to confirm.</p>
+            <h2 className="max-w-2xl text-3xl font-medium md:text-4xl">{ibsHomepage.conversion.title}</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed opacity-80">{ibsHomepage.conversion.text}</p>
           </div>
-          <Link to="/contact" className={buttonStyles({ variant: "light" })}>Book an Appointment</Link>
+          <div className="flex shrink-0 flex-col gap-3">
+            <Link to="/contact" className={buttonStyles({ variant: "light" })}>{ibsHomepage.conversion.book}</Link>
+            {telLink() && <a href={telLink() ?? undefined} className={buttonStyles({ variant: "ghostLight" })}><Phone className="h-4 w-4" aria-hidden />{ibsHomepage.conversion.call}</a>}
+          </div>
         </div>
       </Section>
     </>

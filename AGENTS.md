@@ -14,3 +14,4 @@
 - Unverified credentials/contacts stay `null` or `verified: false` and render as "Pending" placeholders — never hard-code unverified facts in components.
 - No database/auth: the appointment form validates client-side and hands off via WhatsApp only when a number is configured, per owner's request to keep integrations inactive until verified.
 - Canonical tags, sitemap and robots use `site.url`; SEO meta is built with `seo()` in `src/lib/seo.ts`.
+- Homepage IBS narrative is maintained in `src/content/homepage.ts` and rendered with shared site sections, keeping editorial updates separate from layout.
