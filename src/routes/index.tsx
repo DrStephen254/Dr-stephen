@@ -66,7 +66,7 @@ function Home() {
             {approach.map((a) => (
               <div key={a.title} className="rounded-2xl border bg-card p-6">
                 <a.icon className="h-6 w-6 text-primary" aria-hidden />
-                <h3 className="mt-3 text-lg font-medium">{a.title}</h3>
+                <h3 className="mt-3 break-words text-lg font-medium">{a.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
               </div>
             ))}
@@ -101,7 +101,7 @@ function Home() {
             <p className="mt-2 text-muted-foreground">Consultant Physician & Gastroenterologist</p>
             <span className="gold-rule my-6" />
             {ibsHomepage.doctor.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 leading-relaxed text-foreground/85">{paragraph}</p>)}
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="mt-6 grid gap-6 [&_li]:min-w-0 [&_li]:break-words">
               <VerifiedList items={qualifications} emptyNote="Qualifications pending verification." />
               <VerifiedList items={memberships} emptyNote="Memberships pending verification." />
             </div>
