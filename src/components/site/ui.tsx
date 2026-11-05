@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { landlineLink, operatingHours, telLink, whatsappLink, type Verifiable } from "@/content/site";
 
 export const buttonStyles = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-sm font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50",
   {
     variants: {
       variant: {
