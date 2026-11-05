@@ -1,0 +1,3 @@
+- [x] Add the IBS story, symptom cards, patient journey and specialist profile while retaining all other homepage services.
+- [x] Reuse the existing clinic imagery, branding and appointment/telephone links; update homepage SEO.
+- [ ] Check homepage links, booking navigation, images and layout on desktop and mobile; run existing routing tests.
