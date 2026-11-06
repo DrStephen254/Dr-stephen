@@ -112,7 +112,7 @@ export function ContactButtons({ variant = "primary", message = "Hello, I would 
     <div className="flex flex-wrap gap-3">
       <Link to="/contact" className={buttonStyles({ variant })}>Request an Appointment</Link>
       {wa ? (
-        <a href={wa} target="_blank" rel="noopener noreferrer" className={buttonStyles({ variant: variant === "light" ? "ghostLight" : "outline" })}>
+        <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => window.__lovableEvents?.track?.("project.whatsapp_click", { location: "contact_buttons" })} className={buttonStyles({ variant: variant === "light" ? "ghostLight" : "outline" })}>
           <MessageCircle className="h-4 w-4" aria-hidden /> WhatsApp
         </a>
       ) : null}

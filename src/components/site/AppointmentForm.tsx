@@ -28,6 +28,7 @@ export function AppointmentForm() {
     const msg = `Appointment request\nName: ${d.name}\nPhone: ${d.phone}${d.email ? `\nEmail: ${d.email}` : ""}\nReason: ${d.reason}${d.preferredDate ? `\nPreferred date: ${d.preferredDate}` : ""}`;
     const wa = whatsappLink(msg);
     if (wa) window.open(wa, "_blank", "noopener,noreferrer");
+    window.__lovableEvents?.track?.("project.appointment_request_submitted", { reason: d.reason, whatsapp_opened: !!wa });
     setDone({ wa });
     reset();
   };
