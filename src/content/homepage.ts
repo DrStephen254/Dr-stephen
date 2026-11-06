@@ -17,7 +17,7 @@ export const ibsHomepage = {
       { icon: "changes", title: "Changes in Bowel Movements", text: "Repeated episodes of diarrhoea, constipation or alternating between the two." },
       { icon: "emptying", title: "Incomplete Bowel Emptying", text: "Feeling that you have not fully emptied your bowels after using the toilet." },
     ],
-    note: "Many patients with IBS are given drugs for H. Pylori, though H. Pylori is not the cause of their problems. I aim to help patients achieve better digestive health. I explain to the patients what causes their symptoms and how to treat them well.",
+    note: "Many patients with IBS are given drugs for H. Pylori, though H. Pylori is not the cause of their problems. We aim to help patients achieve better digestive health. We explain to the patients what causes their symptoms and how to treat them well.",
   },
   answers: {
     title: "You Deserve Answers, Not Just Temporary Relief.",
