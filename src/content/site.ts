@@ -21,8 +21,8 @@ export const site = {
     mobile: "+254 736 443 383" as string | null,
     /** Confirmed by Dr. Kairu on 6 Nov 2026, replacing the former landline. */
     landline: "+254 722 524 328" as string | null,
-    /** Digits only with country code, e.g. "2547XXXXXXXX". null disables WhatsApp buttons. Awaiting Dr. Kairu's confirmation that this line is on WhatsApp. */
-    whatsapp: null as string | null,
+    /** Confirmed by Dr. Kairu on 6 Nov 2026: +254 722 524 328. Digits only with country code — this enables the WhatsApp buttons. */
+    whatsapp: "254722524328" as string | null,
     email: null as string | null,
     /** Confirmed by Dr. Kairu. */
     address: "The Green House, Adams Arcade, First Floor, Suite No. 19, East Wing",
