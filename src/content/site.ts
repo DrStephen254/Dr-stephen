@@ -19,7 +19,7 @@ export const site = {
   contact: {
     /** Confirmed by Dr. Kairu: 0736 443383. */
     mobile: "+254 736 443 383" as string | null,
-    /** Confirmed by Dr. Kairu on 6 Nov 2026, replacing the former 020 2420950 line. */
+    /** Confirmed by Dr. Kairu on 6 Nov 2026, replacing the former landline. */
     landline: "+254 722 524 328" as string | null,
     /** Digits only with country code, e.g. "2547XXXXXXXX". null disables WhatsApp buttons. Awaiting Dr. Kairu's confirmation that this line is on WhatsApp. */
     whatsapp: null as string | null,
