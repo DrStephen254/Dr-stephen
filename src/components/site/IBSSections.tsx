@@ -35,7 +35,7 @@ export function IBSStorySections() {
             );
           })}
         </div>
-        <p className="mx-auto mt-10 max-w-4xl text-center text-xl leading-relaxed font-medium text-foreground md:text-2xl md:leading-relaxed">{ibsHomepage.symptoms.note}</p>
+        <p className="mx-auto mt-10 max-w-4xl text-center text-xl leading-relaxed font-medium text-balance text-foreground md:text-2xl md:leading-relaxed">{ibsHomepage.symptoms.note}</p>
       </Section>
       <Section>
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
