@@ -26,7 +26,7 @@ function Contact() {
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0 text-primary" /><span><span className="block text-[0.68rem] uppercase tracking-wider text-muted-foreground">Mobile</span>{tel ? <a href={tel} className="underline">{site.contact.mobile}</a> : null}</span></li>
                 <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0 text-primary" /><span><span className="block text-[0.68rem] uppercase tracking-wider text-muted-foreground">Tel</span>{landline ? <a href={landline} className="underline">{site.contact.landline}</a> : null}</span></li>
-                {wa ? <li className="flex gap-2"><MessageCircle className="h-4 w-4 shrink-0 text-primary" /><a href={wa} target="_blank" rel="noopener noreferrer" className="underline">Chat on WhatsApp</a></li> : null}
+                {wa ? <li className="flex gap-2"><MessageCircle className="h-4 w-4 shrink-0 text-primary" /><a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => window.__lovableEvents?.track?.("project.whatsapp_click", { location: "contact_sidebar_link" })} className="underline">Chat on WhatsApp</a></li> : null}
                 {site.contact.email ? <li className="flex gap-2"><Mail className="h-4 w-4 shrink-0 text-primary" /><a href={`mailto:${site.contact.email}`} className="underline">{site.contact.email}</a></li> : null}
                 <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 text-primary" />{site.contact.address}</li>
               </ul>
@@ -34,7 +34,7 @@ function Contact() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Operating hours</p>
                 <HoursList className="mt-3" />
               </div>
-              {wa && <a href={wa} target="_blank" rel="noopener noreferrer" className={buttonStyles({ variant: "primary" }) + " mt-6 w-full"}><MessageCircle className="h-4 w-4" /> WhatsApp the clinic</a>}
+              {wa && <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => window.__lovableEvents?.track?.("project.whatsapp_click", { location: "contact_sidebar_button" })} className={buttonStyles({ variant: "primary" }) + " mt-6 w-full"}><MessageCircle className="h-4 w-4" /> WhatsApp the clinic</a>}
             </div>
             <div className="rounded-2xl border border-destructive/30 bg-card p-6 text-sm">
               <p className="font-semibold text-destructive">Medical emergency?</p>

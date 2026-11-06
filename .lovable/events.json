@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "events": {
+    "project.appointment_request_submitted": {
+      "event_schema_version": 1,
+      "description": "A visitor submitted a valid appointment request form.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reason",
+          "whatsapp_opened"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "enum": [
+              "Consultation",
+              "Endoscopy",
+              "Colonoscopy",
+              "Follow-up",
+              "Other"
+            ]
+          },
+          "whatsapp_opened": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "project.whatsapp_click": {
+      "event_schema_version": 1,
+      "description": "A visitor clicked a WhatsApp booking button or link.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "location"
+        ],
+        "properties": {
+          "location": {
+            "type": "string",
+            "enum": [
+              "contact_buttons",
+              "contact_sidebar_link",
+              "contact_sidebar_button"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
